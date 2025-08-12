@@ -1,0 +1,78 @@
+<mvc:View controllerName="mailprj.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <headerContent>
+      <Button icon="sap-icon://email" press="onOpenMailDialog" tooltip="Send Email" />
+       <Button icon="sap-icon://email" press="onMailPress" tooltip="Send Email" />
+    </headerContent>
+    <content>
+      <VBox id="contentBox">
+        <Text text="Hello, this is a sample content to send via mail." />
+        <Text text="More details can be added here." />
+         <form:SimpleForm layout="ResponsiveGridLayout" >
+                        <Label text="ID" required="true"/>
+                        <Input placeholder="product id" id="product_id" type="number" width="300px" value="101"></Input>
+                        <Label text="Name" required="true"/>
+                        <Select selectedKey="{localdata>/Invoices/Name}"></Select>
+                        <Label text="Product Desc" required="true"/>
+                        <Input placeholder="product desc" id="product_desc" width="300px" value="Cotton Shirt"></Input>
+                        <Label text="Product Color" required="true"/>
+                        <Input placeholder="product color" id="product_color" width="300px" value="Cotton Shirt"></Input>
+                        <Label text="Product Theme" required="true"/>
+                        <Input placeholder="product theme" id="product_theme" width="300px" value="Cotton Shirt"></Input>
+        </form:SimpleForm>
+         <form:SimpleForm layout="ResponsiveGridLayout" >
+                        <Label text="ID" required="true"/>
+                        <Input placeholder="product id" id="product_id2" type="number" width="300px" value="102"></Input>
+                        <Label text="Name" required="true"/>
+                        <Select selectedKey="{localdata>/Invoices/Name}"></Select>
+                        <Label text="Product Desc" required="true"/>
+                        <Input placeholder="product desc" id="product_desc2" width="300px" value="Cotton Shirt"></Input>
+                        <Label text="Product Color" required="true"/>
+                        <Input placeholder="product color" id="product_color2" width="300px" value="Cotton Shirt"></Input>
+                        <Label text="Product Theme" required="true"/>
+                        <Input placeholder="product theme" id="product_theme2" width="300px" value="Cotton Shirt"></Input>
+
+
+                        <Label text="ID" required="true"/>
+                        <Input placeholder="product id" id="product_id3" type="number" width="300px" value="103"></Input>
+                        <Label text="Name" required="true"/>
+                        <Select selectedKey="{localdata>/Invoices/Name}"></Select>
+                        <Label text="Product Desc" required="true"/>
+                        <Input placeholder="product desc" id="product_desc3" width="300px" value="Cotton Shirt"></Input>
+                        <Label text="Product Color" required="true"/>
+                        <Input placeholder="product color" id="product_color3" width="300px" value="Cotton Shirt"></Input>
+                        <Label text="Product Theme" required="true"/>
+                        <Input placeholder="product theme" id="product_theme3" width="300px" value="Cotton Shirt"></Input>
+
+
+        </form:SimpleForm>
+              
+        <Table id="productTable">
+  <columns>
+    <Column><Text text="Product" /></Column>
+    <Column><Text text="Qty" /></Column>
+  </columns>
+  <items>
+    <ColumnListItem>
+      <cells>
+        <Text text="Laptop" />
+        <Text text="2" />
+      </cells>
+    </ColumnListItem>
+    <ColumnListItem>
+      <cells>
+        <Text text="Mouse" />
+        <Text text="5" />
+      </cells>
+    </ColumnListItem>
+  </items>
+</Table>
+
+
+      </VBox>
+    </content>
+    </Page>
+</mvc:View>

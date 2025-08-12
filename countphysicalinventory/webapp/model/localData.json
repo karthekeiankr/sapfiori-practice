@@ -1,0 +1,115 @@
+{
+    "InventoryItems": [
+      {
+        "StorageBin": "BIN001",
+        "BinEmpty": true,
+        "HandlingUnit": "HU001",
+        "Product": "PROD001",
+        "ProductDesc": "Product 1 Description",
+        "CountReference": "REF001",
+        "Quantity": 10,
+        "UoM": "PC",
+        "Checked": false
+      },
+      {
+        "StorageBin": "BIN002",
+        "BinEmpty": false,
+        "HandlingUnit": "HU002",
+        "Product": "PROD002",
+        "ProductDesc": "Product 2 Description",
+        "CountReference": "REF002",
+        "Quantity": 5,
+        "UoM": "PC",
+        "Checked": true
+      },
+      {
+        "StorageBin": "BIN003",
+        "BinEmpty": true,
+        "HandlingUnit": "HU003",
+        "Product": "PROD003",
+        "ProductDesc": "Product 3 Description",
+        "CountReference": "REF003",
+        "Quantity": 20,
+        "UoM": "KG",
+        "Checked": false
+      },
+      {
+        "StorageBin": "BIN004",
+        "BinEmpty": false,
+        "HandlingUnit": "HU004",
+        "Product": "PROD004",
+        "ProductDesc": "Product 4 Description",
+        "CountReference": "REF004",
+        "Quantity": 15,
+        "UoM": "PC",
+        "Checked": true
+      },
+      {
+        "StorageBin": "BIN005",
+        "BinEmpty": true,
+        "HandlingUnit": "HU005",
+        "Product": "PROD005",
+        "ProductDesc": "Product 5 Description",
+        "CountReference": "REF005",
+        "Quantity": 8,
+        "UoM": "PC",
+        "Checked": false
+      },
+      {
+        "StorageBin": "BIN006",
+        "BinEmpty": false,
+        "HandlingUnit": "HU006",
+        "Product": "PROD006",
+        "ProductDesc": "Product 6 Description",
+        "CountReference": "REF006",
+        "Quantity": 30,
+        "UoM": "KG",
+        "Checked": true
+      },
+      {
+        "StorageBin": "BIN007",
+        "BinEmpty": true,
+        "HandlingUnit": "HU007",
+        "Product": "PROD007",
+        "ProductDesc": "Product 7 Description",
+        "CountReference": "REF007",
+        "Quantity": 12,
+        "UoM": "PC",
+        "Checked": false
+      },
+      {
+        "StorageBin": "BIN008",
+        "BinEmpty": false,
+        "HandlingUnit": "HU008",
+        "Product": "PROD008",
+        "ProductDesc": "Product 8 Description",
+        "CountReference": "REF008",
+        "Quantity": 25,
+        "UoM": "KG",
+        "Checked": true
+      },
+      {
+        "StorageBin": "BIN009",
+        "BinEmpty": true,
+        "HandlingUnit": "HU009",
+        "Product": "PROD009",
+        "ProductDesc": "Product 9 Description",
+        "CountReference": "REF009",
+        "Quantity": 18,
+        "UoM": "PC",
+        "Checked": false
+      },
+      {
+        "StorageBin": "BIN010",
+        "BinEmpty": false,
+        "HandlingUnit": "HU010",
+        "Product": "PROD010",
+        "ProductDesc": "Product 10 Description",
+        "CountReference": "REF010",
+        "Quantity": 50,
+        "UoM": "KG",
+        "Checked": true
+      }
+    ]
+  }
+  

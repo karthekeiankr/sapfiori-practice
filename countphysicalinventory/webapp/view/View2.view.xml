@@ -1,0 +1,124 @@
+<mvc:View xmlns:odata="sap.ui.comp.odata" controllerName="countphysicalinventory.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:smart="sap.ui.comp.smarttable"
+     xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout">
+    <Page id="View2" title="{i18n>title}">
+        <content>
+            <VBox>
+                 <VBox >
+                 <HeaderContainer >
+                    <Title text="Phsical Inventory"></Title>
+                 </HeaderContainer>
+                        <Label id="PIDocumentnum" text="Warehouse Order:200004480" />
+                        <Label text="Number of Physical Inventory Items:1" />
+                        <Label text="Time Zone:CET" />    
+                </VBox>
+                <!-- General Information Section -->
+                <uxap:ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+                    <uxap:sections>
+                        <uxap:ObjectPageSection title="General Information">
+                            <uxap:subSections>
+                                <uxap:ObjectPageSubSection  title="General Information">
+                                    <uxap:blocks>
+                                        <VBox alignContent="Center">
+                                            <Label text="Counter:" required="true"  />
+                                            <Input  value="DEMO" required="true" width="250px"/>
+
+                                            <Label text="Count Date and Time:" required="true"/>
+                                            <DatePicker value="Apr 1, 2025" required="true" width="250px"></DatePicker>
+                                        </VBox>
+                                    </uxap:blocks>
+                                </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                        </uxap:ObjectPageSection>
+                         <!-- Count Physical Inventory Items Section -->
+                        <uxap:ObjectPageSection title="Counter Details">
+                            <uxap:subSections>
+                                <uxap:ObjectPageSubSection title="Counter Physical Inventory Items">
+                                    <uxap:blocks>   
+                                    <VBox height="100%">
+                                        <HBox>
+                                                    <MenuButton id="downloadButton"
+                                    type="Transparent" text="Add HU">
+                                <menu>
+                                    <Menu>
+                                        <items>
+                                            <MenuItem text="HU" />
+                                        </items>
+                                    </Menu>
+                                </menu>
+                        </MenuButton>
+                                                    <Button text="Add Product" type="Transparent"  press="onProductItem"/>
+                                                    <Button text="Delete" type="Negative" icon="sap-icon://delete" press="onDeleteItem"/>
+                                                    <Button type="Transparent" text="Assign Count Reference"  press="onAssignCountReference" />
+                                                     <!-- //calling glbal function from component.js  -->
+                                                      <Button press="onClick" text="CLick"></Button>
+                                                    <Button text="navigate" press="navigatetoView3"/>
+                                        </HBox>
+                                        <VBox height="100%">
+                                            <Table headerText="Total Rows of PI items" items="{data3>/InventoryItems}" width="100%" >   
+                                           
+                                                <columns>
+                                                    <Column>
+                                                        <Text text="Storage Bin" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="Bin Empty" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="Handling Unit" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="Product" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="Product Description" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="Count Reference" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="Quantity" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="UoM" />
+                                                    </Column>
+                                                    <Column>
+                                                        <Text text="Checked" />
+                                                    </Column>
+                                                </columns>
+                                                <items>
+                                                    <ColumnListItem>
+                                                        <cells>
+                                                            <Text text="{data3>StorageBin}" />
+                                                            <Text text="{data3>BinEmpty}" />
+                                                            <Text text="{data3>HandlingUnit}" />
+                                                            <Text text="{data3>Product}" />
+                                                            <Text text="{data3>ProductDesc}" />
+                                                            <Text text="{data3>CountReference}" />
+                                                            <Input ></Input>
+                                                            <ComboBox >
+                                                                <core:Item key="{data3>Product}" text="{data3>Product}" />
+                                                                <core:Item key="{data3>CountReference}" text="{data3>CountReference}" />
+                                                            </ComboBox>
+                                                            <Text text="{data3>Checked}" />  
+                                                        </cells>
+                                                    </ColumnListItem>
+                                                </items>
+                                            </Table>  
+                                            </VBox>  
+                                              </VBox>       
+                                    </uxap:blocks>
+                                </uxap:ObjectPageSubSection>
+                            </uxap:subSections>
+                        </uxap:ObjectPageSection>
+                    </uxap:sections>
+                </uxap:ObjectPageLayout>
+             </VBox>        
+        </content>
+    </Page>
+</mvc:View>

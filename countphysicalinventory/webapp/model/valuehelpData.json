@@ -1,0 +1,61 @@
+{
+  "WarehouseNumbers": [
+    { "id": "WH001", "name": "Warehouse 1" },
+    { "id": "WH002", "name": "Warehouse 2" },
+    { "id": "WH003", "name": "Warehouse 3" }
+  ],
+  "PhysicalInventoryDoc": {
+    "PhysicalInventoryDocs": [
+      { "id": "PID1001", "name": "Inventory Doc 1001" },
+      { "id": "PID1002", "name": "Inventory Doc 1002" },
+      { "id": "PID1003", "name": "Inventory Doc 1003" }
+    ]
+  },
+  "WarehouseOrder": {
+    "WarehouseOrders": [
+      { "id": "WO001", "name": "Order 001" },
+      { "id": "WO002", "name": "Order 002" },
+      { "id": "WO003", "name": "Order 003" }
+    ]
+  },
+  "StorageType": {
+    "StorageTypes": [
+      { "id": "ST01", "name": "Small Storage" },
+      { "id": "ST02", "name": "Medium Storage" },
+      { "id": "ST03", "name": "Large Storage" }
+    ]
+  },
+  "StorageBin": {
+    "StorageBins": [
+      { "id": "SB001", "name": "Bin 001" },
+      { "id": "SB002", "name": "Bin 002" },
+      { "id": "SB003", "name": "Bin 003" }
+    ]
+  },
+  "PhysicalInventoryReason": {
+    "PhysicalInventoryReasons": [
+      { "id": "R01", "name": "Annual Check" },
+      { "id": "R02", "name": "Damage Check" },
+      { "id": "R03", "name": "Audit Requirement" }
+    ]
+  },
+  "PhysicalInventoryPriority": {
+    "PhysicalInventoryPriorities": [
+      { "id": "P1", "name": "High" },
+      { "id": "P2", "name": "Medium" },
+      { "id": "P3", "name": "Low" }
+    ]
+  },
+  "ActivationStatuses": [
+    { "id": "Active", "name": "Active" },
+    { "id": "inactive", "name": "Inactive" }
+  ],
+  "PrintStatuses": [
+    { "id": "printed", "name": "Printed" },
+    { "id": "pending", "name": "Pending" }
+  ],
+  "CountStatuses": [
+    { "id": "completed", "name": "Completed" },
+    { "id": "inprogress", "name": "In Progress" }
+  ]
+}

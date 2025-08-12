@@ -1,0 +1,163 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "countphysicalinventory",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.17.1",
+      "toolsId": "3ed71ec9-8fd0-41b9-bba9-42358c6510c9"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.134.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {},
+        "sap.uxap": {},
+        "sap.ui.comp": {} 
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "countphysicalinventory.i18n.i18n"
+        }
+      },
+      "data": {
+        "type": "sap.ui.model.json.JSONModel",
+        "settings": {
+            "dataSource": "tableData"
+        } 
+      },
+      "data2": {
+        "type": "sap.ui.model.json.JSONModel",
+       "settings": {
+            "dataSource": "valuehelpData"
+        }
+      },
+      "data3": {
+        "type": "sap.ui.model.json.JSONModel",
+       "settings": {
+            "dataSource": "localData"
+        }
+      },
+      "data4": {
+        "type": "sap.ui.model.json.JSONModel",
+       "settings": {
+            "dataSource": "treetable"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      "tableData": {
+        "uri": "model/tableData.json",
+        "type": "JSON"
+    },
+    "valuehelpData":{
+      "uri":"model/valuehelpData.json",
+      "type":"JSON"
+    },
+    "localData":{
+      "uri":"model/localData.json",
+      "type":"JSON"
+    },
+    "treetable":{
+      "uri":"model/treetable.json",
+      "type":"JSON"
+    }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "countphysicalinventory.view",
+        "async": true,
+        "viewPath": "countphysicalinventory.view"
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "View2",
+          "pattern": "View2/{PIDocument}",
+          "target": [
+            "TargetView2"
+          ]
+        },
+        {
+          "name": "treetable",
+          "pattern": "View3",
+          "target": [
+            "TargetView3"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "id": "View1",
+          "name": "View1"
+        },
+        "TargetView2": {
+          "id": "View2",
+          "name": "View2"
+        },
+        "TargetView3": {
+          "id": "treetable",
+          "name": "treetable"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "countphysicalinventory.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<mvc:View xmlns:odata="sap.ui.comp.odata" controllerName="countphysicalinventory.controller.treetable"
+    xmlns="sap.m" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table"> 
+
+    <m:Page id="page3" title="{i18n>title}"> 
+        <m:content>
+            <table:TreeTable  width="auto"
+                id="TreeTable"
+                rows="{path:'data4>/catalog/clothing', parameters: {arrayNames:['categories']}}"
+                selectionMode="MultiToggle"
+                enableSelectAll="false"
+                ariaLabelledBy="title">
+                
+                <table:extension>
+                    <m:OverflowToolbar style="Clear">
+                        <m:Title id="title" text="Clothing"/>
+                        <m:ToolbarSpacer/>
+                        <m:Button text="Collapse all" press="onCollapseAll"/>
+                        <m:Button text="Collapse selection" press="onCollapseSelection"/>
+                        <m:Button text="Expand first level" press="onExpandFirstLevel"/>
+                        <m:Button text="Expand selection" press="onExpandSelection"/>
+                    </m:OverflowToolbar>
+                </table:extension>
+
+                <table:columns>
+                    <table:Column >
+                        <m:Label text="Categories"/>
+                        <table:template>
+                            <m:Text text="{data4>name}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column >
+                        <m:Label text="Price"/>
+                        <table:template>
+                            <u:Currency value="{data4>amount}" currency="{data4>currency}"/>
+                        </table:template>
+                    </table:Column>
+                    <table:Column>
+                        <m:Label text="Size"/>
+                        <table:template>
+                            <m:Select
+                                items="{path: 'data4>/sizes', templateShareable: true}"
+                                selectedKey="{data4>size}"
+                                visible="{= !!${data4>size}}"
+                                forceSelection="false">
+                                <core:Item key="{data4>key}" text="{data4>value}"/>
+                            </m:Select>
+                        </table:template>
+                    </table:Column>
+                </table:columns>
+            </table:TreeTable>
+        </m:content>
+    </m:Page>
+</mvc:View>

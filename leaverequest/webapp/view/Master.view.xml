@@ -1,0 +1,18 @@
+<mvc:View
+  controllerName="leaverequest.controller.Master"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+
+   <List
+    id="leaveList"
+    items="{
+      path: '/LeaveRequests'
+    }"
+    itemPress="onItemPress"
+    mode="SingleSelectMaster">
+    <StandardListItem
+      title="{Employee}"
+      description="{Reason}"
+      type="Active" />
+  </List>
+</mvc:View>

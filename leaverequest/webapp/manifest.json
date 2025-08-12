@@ -1,0 +1,102 @@
+{
+  "_version": "1.32.0",
+  "sap.app": {
+    "id": "leaverequest",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "flexEnabled": true,
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "componentName": "leaverequest",
+    "dependencies": {
+      "minUI5Version": "1.96",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.f": {},
+        "sap.ui.unified": {}
+      }
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/leaverequests.json"
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "leaverequest.i18n.i18n"
+        }
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "rootView": {
+      "viewName": "leaverequest.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewNamespace": "leaverequest.view",
+        "controlId": "SplitApp",
+        "controlAggregation": "pages",
+        "bypassed": {
+          "target": ["master"]
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "master",
+          "target": ["master"]
+        },
+        {
+          "pattern": "detail/{path}",
+          "name": "detail",
+          "target": ["detail"]
+        }
+      ],
+      "targets": {
+        "master": {
+          "viewId": "masterView",
+          "viewName": "Master",
+          "viewLevel": 1
+        },
+        "detail": {
+          "viewId": "detailView",
+          "viewName": "Detail",
+          "viewLevel": 2
+        }
+      }
+    }
+  }
+}

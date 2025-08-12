@@ -1,0 +1,44 @@
+<mvc:View
+  controllerName="xlupload.controller.View1"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  xmlns:unified="sap.ui.unified"
+  displayBlock="true">
+
+  <Page title="Upload CSV or Excel">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <unified:FileUploader
+          id="fileUploader"
+          fileType="csv,xlsx"
+          change="onFileUpload"
+          width="300px"
+          placeholder="Choose CSV or Excel file..." />
+
+         <HBox class="sapUiSmallMarginTop" justifyContent="Start" alignItems="Center" renderType="Bare">
+          <Button text="Load Data (GET)" press="onLoadData" />
+          <Button text="Upload Data (POST)" press="onUploadData" class="sapUiTinyMarginBegin" />
+          <Button text="Update Selected (PUT)" press="onUpdateSelected" class="sapUiTinyMarginBegin" />
+          <Button text="Delete Selected (DELETE)" press="onDeleteSelected" class="sapUiTinyMarginBegin" />
+        </HBox>
+
+        <Table id="dataTable"  mode="MultiSelect" items="{/fileData}">
+          <columns>
+            <Column><Text text="ID" /></Column>
+            <Column><Text text="NAME" /></Column>
+            <Column><Text text="CITY" /></Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Input value="{Id}"></Input>
+                <Input value="{Name}"></Input>
+                <Input value="{City}"></Input>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

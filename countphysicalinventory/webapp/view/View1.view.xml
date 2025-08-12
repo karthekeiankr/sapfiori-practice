@@ -1,0 +1,160 @@
+<mvc:View xmlns:odata="sap.ui.comp.odata" controllerName="countphysicalinventory.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+     xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:uxap="sap.uxap"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:smart="sap.ui.comp.smarttable"
+    xmlns:layout="sap.ui.layout">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <f:DynamicPage id="dynamicPageContainer">
+                <f:header>
+                  <f:DynamicPageHeader id="dynamicPageHeader">
+    <f:content>
+        <fb:FilterBar id="filterBar" useToolbar="true" search="onSearch">
+            <fb:filterGroupItems>
+
+                <fb:FilterGroupItem id="warehouseNumberFilter" groupName="General" mandatory="true" label="Warehouse Number" name="WarehouseNumber" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input id="warehouseNumberInput" showValueHelp="true" valueHelpRequest="onValueHelpRequest"  width="45%"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="documentYearFilter" groupName="Document Info" label="Document Year" name="DocumentYear" visibleInFilterBar="true">
+                    <fb:control>
+                        <MultiInput id="documentYearInput">
+                            <tokens>
+                                <Token text="2025"/>
+                            </tokens>
+                        </MultiInput>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="physicalInventoryDocFilter" groupName="Document Info" label="Physical Inventory Document" name="PhysicalInventoryDoc" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input id="physicalInventoryDocInput" showValueHelp="true" valueHelpRequest="onValueHelpRequest" width="45%"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="warehouseOrderFilter" groupName="Warehouse Info" label="Warehouse Order" name="WarehouseOrder" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input id="warehouseOrderInput" showValueHelp="true" valueHelpRequest="onValueHelpRequest" width="45%"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="storageTypeFilter" groupName="Storage Info" label="Storage Type" name="StorageType" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input id="storageTypeInput" showValueHelp="true" valueHelpRequest="onValueHelpRequest" width="45%"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="storageBinFilter" groupName="Storage Info" label="Storage Bin" name="StorageBin" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input id="storageBinInput" showValueHelp="true" valueHelpRequest="onValueHelpRequest" width="45%"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="createdOnFilter" groupName="Date Info" label="Created On" name="CreatedOn" visibleInFilterBar="true">
+                    <fb:control>
+                        <!-- <DateRangeSelection id="createdOnDateRange"/> -->
+                        <DatePicker id="createdOnDate"></DatePicker>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+              <fb:FilterGroupItem id="activationStatusFilter" groupName="Status Info" label="Activation Status" name="ActivationStatus" visibleInFilterBar="true">
+                    <fb:control>
+                        <ComboBox id="activationStatusSelect" items="{data2>/ActivationStatuses}">
+                            <core:Item key="{data2>id}" text="{data2>name}" />
+                        </ComboBox>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="printStatusFilter" groupName="Status Info" label="Print Status" name="PrintStatus" visibleInFilterBar="true">
+                    <fb:control>
+                        <ComboBox id="printStatusSelect" items="{data2>/PrintStatuses}">
+                            <core:Item key="{data2>id}" text="{data2>name}" />
+                        </ComboBox>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="countStatusFilter" groupName="Status Info" label="Count Status" name="CountStatus" visibleInFilterBar="true">
+                    <fb:control>
+                        <ComboBox id="countStatusSelect" items="{data2>/CountStatuses}">
+                            <core:Item key="{data2>id}" text="{data2>name}" />
+                        </ComboBox>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+
+                <fb:FilterGroupItem id="physicalInventoryProcedureFilter" groupName="Inventory Info" label="Physical Inventory Procedure" name="PhysicalInventoryProcedure" visibleInFilterBar="true">
+                    <fb:control>
+                        <ComboBox id="physicalInventoryProcedure"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="physicalInventoryReasonFilter" groupName="Inventory Info" label="Physical Inventory Reason" name="PhysicalInventoryReason" visibleInFilterBar="true">
+                     <fb:control>
+                        <Input id="physicalInventoryReason" showValueHelp="true" valueHelpRequest="onValueHelpRequest" width="45%"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+                <fb:FilterGroupItem id="physicalInventoryPriorityFilter" groupName="Inventory Info" label="Physical Inventory Priority" name="PhysicalInventoryPriority" visibleInFilterBar="true">
+                    <fb:control>
+                        <Input id="physicalInventoryPriority" showValueHelp="true" valueHelpRequest="onValueHelpRequest" width="45%"/>
+                    </fb:control>
+                </fb:FilterGroupItem>
+
+            </fb:filterGroupItems>
+        </fb:FilterBar>
+    </f:content>
+</f:DynamicPageHeader>
+  </f:header>
+                <f:content>  
+                        <VBox height="100%">
+                    <!-- <Button text="press" press="onPress"></Button> -->
+                    <Button press="onClick" text="CLick"></Button><!-- //calling glbal function from component.js  -->
+                    <Table id="physicalInventoryDocument"
+                            items="{data>/TableData}"  growing="true" growingScrollToLoad="true" mode="None"   
+                            >                         
+    <columns>
+        <Column>
+            <Text text="PI Document"/>
+        </Column>
+        <Column>
+            <Text text="Number Of Warehouse Orders"/>
+        </Column>
+        <Column>
+            <Text text="Counted/Total PI Items"/>
+        </Column>
+        <Column>
+            <Text text="Print Status"/>
+        </Column>
+        <Column>
+            <Text text="Activation Status"/>
+        </Column>
+        <Column>
+            <Text text="Created On"/>
+        </Column>
+    </columns>
+    <items>
+        <ColumnListItem type="Navigation" press=".onRowSelection">
+            <cells>
+                <Text text="{data>PIDocument}"/>
+                <Text text="{data>WarehouseOrders}"/>
+                <Text text="{data>CountedTotalPIItems}"/>
+                <Text text="{data>PrintStatus}"/>
+                <Text text="{data>ActivationStatus}"/>
+                <Text text="{data>CreatedOn}"/>
+            </cells>
+        </ColumnListItem>
+    </items>
+                    </Table>
+                </VBox>
+                </f:content>  
+            </f:DynamicPage>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,19 @@
+{
+   "LeaveRequests": [
+    {
+      "RequestID": "LR001",
+      "Employee": "John Doe",
+      "Reason": "Medical Leave",
+      "StartDate": "2025-08-01",
+      "EndDate": "2025-08-02"
+    },
+    {
+      "RequestID": "LR002",
+      "Employee": "Jane Smith",
+      "Reason": "Vacation",
+      "StartDate": "2025-08-08",
+      "EndDate": "2025-08-14"
+    }
+  ]
+  }
+  

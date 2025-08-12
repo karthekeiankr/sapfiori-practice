@@ -1,0 +1,29 @@
+<mvc:View
+  controllerName="leaverequest.controller.Detail"
+  xmlns:mvc="sap.ui.core.mvc"
+   xmlns:unified="sap.ui.unified"
+  xmlns="sap.m">
+
+   <Page title="Leave Details" showFooter="true">
+    <content>
+      <VBox class="sapUiSmallMargin">
+        <Text text="Name: {/Employee}" />
+        <Text text="Reason: {/Reason}" />
+        <Text text="Date: {/StartDate} to {/EndDate}" />
+
+        <unified:Calendar id="leaveCalendar"
+          singleSelection="false"
+          showWeekNumbers="false" />
+      </VBox>
+    </content>
+
+    <footer>
+      <Bar>
+        <contentRight>
+          <Button text="Approve" type="Accept" press="onApprove" />
+          <Button text="Reject" type="Reject" press="onReject" />
+        </contentRight>
+      </Bar>
+    </footer>
+  </Page>
+</mvc:View>
